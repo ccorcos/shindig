@@ -1,0 +1,4 @@
+#!/bin/sh
+
+trash ../build/v0.2.1
+NODE_ENV=production meteor build ../build/v0.2.1 --server http://findashindig.com --mobile-settings deploy/settings.json --verbose

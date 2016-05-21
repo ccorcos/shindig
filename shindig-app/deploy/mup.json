@@ -1,0 +1,21 @@
+{
+  "servers": [
+    {
+      "host": "[IP]",
+      "username": "root",
+      "password": "[PASSWORD]"
+    }
+  ],
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.40",
+  "setupPhantom": false,
+  "enableUploadProgressBar": true,
+  "appName": "shindig-app",
+  "app": "..",
+  "env": {
+    "ROOT_URL": "http://findashindig.com",
+    "MONGO_URL": "mongodb://mongo:[PASSWORD]@[IP]:27017/shindig-app"
+  },
+  "deployCheckWaitTime": 15
+}

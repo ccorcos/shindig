@@ -1,0 +1,161 @@
+/*
+These are some functions for building animations that play nice with
+React.addons.CSSTransitionGroup.
+*/
+
+animate-fade-in(name, action)
+  .{name}-{action}
+    opacity: 0
+
+  .{name}-{action}.{name}-{action}-active
+    transition: opacity .2s ease
+    opacity: 1
+
+animate-fade-out(name, action)
+  .{name}-{action}
+    opacity: 1
+
+  .{name}-{action}.{name}-{action}-active
+    transition: opacity .2s ease
+    opacity: 0
+
+animate-fade(name)
+  animate-fade-in(name, 'appear')
+  animate-fade-in(name, 'enter')
+  animate-fade-out(name, 'leave')
+
+
+
+animate-delay-fade-appear(name, action)
+  .{name}-{action}
+    opacity: 0
+
+  .{name}-{action}.{name}-{action}-active
+    transition: opacity .2s ease
+    opacity: 1
+
+animate-delay-fade-in(name, action)
+  .{name}-{action}
+    opacity: 0
+
+  .{name}-{action}.{name}-{action}-active
+    transition: opacity .2s ease .2s
+    opacity: 1
+
+animate-delay-fade-out(name, action)
+  .{name}-{action}
+    opacity: 1
+
+  .{name}-{action}.{name}-{action}-active
+    transition: opacity .2s ease
+    opacity: 0
+
+animate-delay-fade(name)
+  animate-delay-fade-appear(name, 'appear')
+  animate-delay-fade-in(name, 'enter')
+  animate-delay-fade-out(name, 'leave')
+
+
+animate-scale-in(name, action)
+  .{name}-{action}
+    transform: scale3d(0.01, 0.01, 0.01)
+
+  .{name}-{action}.{name}-{action}-active
+    transition: transform .2s ease-out
+    transform: scale3d(1, 1, 1)
+
+animate-scale-out(name, action)
+  .{name}-{action}
+    transform: scale3d(1, 1, 1)
+
+  .{name}-{action}.{name}-{action}-active
+    transition: transform .2s ease-in
+    transform: scale3d(0.01, 0.01, 0.01)
+
+animate-scale(name)
+  animate-scale-in(name, 'appear')
+  animate-scale-in(name, 'enter')
+  animate-scale-out(name, 'leave')
+
+
+animate-noop(name, action)
+  .{name}-{action}
+    opacity: 0.999
+
+  .{name}-{action}.{name}-{action}-active
+    opacity: 1
+    transition: opacity 0.001s ease
+
+animate-inert(name)
+  animate-noop(name, 'appear')
+  animate-noop(name, 'enter')
+  animate-noop(name, 'leave')
+
+
+animate-push-in(name, action)
+  .{name}-{action}
+    transform: translateX(100%)
+    z-index: 1
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateX(0%)
+    transition: transform .5s ease
+
+animate-push-out(name, action)
+  .{name}-{action}
+    transform: translateX(0%)
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateX(-33%)
+    transition: transform .5s ease
+
+animate-push(name)
+  animate-push-in(name, 'enter')
+  animate-push-out(name, 'leave')
+
+
+animate-pop-in(name, action)
+  .{name}-{action}
+    transform: translateX(-33%)
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateX(0%)
+    transition: transform .5s ease
+
+animate-pop-out(name, action)
+  .{name}-{action}
+    transform: translateX(0%)
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateX(100%)
+    transition: transform .5s ease
+
+animate-pop(name)
+  animate-pop-in(name, 'enter')
+  animate-pop-out(name, 'leave')
+
+
+animate-slide-up-in(name, action)
+  .{name}-{action}
+    transform: translateY(100%)
+    opacity: 0
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateY(0%)
+    opacity: 1
+    transition: transform .5s ease, opacity .5s ease
+
+animate-slide-down-out(name, action)
+  .{name}-{action}
+    transform: translateY(0%)
+    opacity: 1
+
+  .{name}-{action}.{name}-{action}-active
+    transform: translateY(100%)
+    opacity: 0
+    transition: transform .5s ease, opacity .5s ease
+
+animate-slide-up(name)
+  animate-slide-up-in(name, 'appear')
+  animate-slide-up-in(name, 'enter')
+  animate-slide-down-out(name, 'leave')

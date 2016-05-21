@@ -1,0 +1,8 @@
+#!/bin/sh
+
+open -a "Google Chrome" http://stats.findashindig.com/
+open -a "Google Chrome" https://ui.kadira.io/apps/Ro2GPRAytStoYKndK/dashboard/overview
+open -a "Google Chrome" https://developers.facebook.com/apps/dashboard/
+open -a "Google Chrome" https://cloud.digitalocean.com/droplets#actions-graphs
+open -a "Google Chrome" https://analytics.google.com/analytics/web/#report/visitors-overview/
+open -a "Google Chrome" https://heapanalytics.com/app/event

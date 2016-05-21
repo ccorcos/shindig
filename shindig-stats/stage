@@ -1,0 +1,11 @@
+#!/bin/sh
+
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+cd $dir
+
+# startup neo4j and mongo
+ttab -t 'shindig-stats-stage' eval "\
+MONGO_URL=mongodb://mongo:[PASSWORD]@[IP]:27017/shindig-app \
+meteor --settings settings.stage.json --port 3002"
+
+open -a "Google Chrome" http://localhost:3002/

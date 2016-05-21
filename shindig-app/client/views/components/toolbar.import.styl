@@ -1,0 +1,26 @@
+
+.toolbar
+  flex: 0 0 0
+  background-color: color-toolbar
+  overflow: hidden
+  // Safari doesnt like specifying flexhere
+  transition: .5s ease
+  .wrap-content
+    padding-top: toolbar-top-padding
+    padding-bottom: toolbar-bottom-padding
+  &.open-1
+    flex: 0 0 (toolbar-row-height*1 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-2
+    flex: 0 0 (toolbar-row-height*2 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-3
+    flex: 0 0 (toolbar-row-height*3 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-4
+    flex: 0 0 (toolbar-row-height*4 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-5
+    flex: 0 0 (toolbar-row-height*5 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-6
+    flex: 0 0 (toolbar-row-height*6 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-7
+    flex: 0 0 (toolbar-row-height*7 + toolbar-top-padding + toolbar-bottom-padding)
+  &.open-8
+    flex: 0 0 (toolbar-row-height*8 + toolbar-top-padding + toolbar-bottom-padding)

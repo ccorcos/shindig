@@ -1,0 +1,9 @@
+#!/bin/sh
+
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+cd $dir
+
+# startup neo4j and mongo
+ttab -t 'shindig-ios-prod' eval "\
+MONGO_URL=mongodb://mongo:[PASSWORD]@[IP]:27017/shindig-app \
+meteor run ios-device --settings deploy/settings.json --mobile-server http://findashindig.com"

@@ -1,0 +1,99 @@
+/*
+Some utility function and classes. Keep this as minimal as possible.
+*/
+
+flex-column()
+  display: flex
+  flex-direction: column
+
+flex-row()
+  display: flex
+  flex-direction: row
+
+flex-center()
+  display: flex
+  align-items: center
+  justify-content: center
+
+flex-center-left()
+  display: flex
+  align-items: center
+  justify-content: left
+
+flex-full()
+  flex: 1 1 0
+
+flex-hide()
+  flex: 0 0 0
+  overflow: hidden
+  opacity: 0
+  position: relative
+
+flex-unhide()
+  flex: auto
+  opacity: 1
+
+full-size()
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+
+// a nib shim for filter css prefixing
+// https://github.com/tj/nib/pull/177#issuecomment-123989317
+filter()
+  vendor('filter', arguments, only: webkit)
+
+/*
+These should be the most important classes for laying out components that
+don't have specific values which should probably have a variable.
+
+Its common to see something like .full.rel in a wrapper component. Then
+somewhere down the line, after some CSSTransitionGroups or view controllers,
+have an .abs which will skip over all the layout junk.
+*/
+
+.abs
+  full-size()
+
+.rel
+  position: relative
+
+.col
+  flex-column()
+
+.row
+  flex-row()
+
+.full
+  flex-full()
+
+// safari hates things in flexboxes without flex auto
+*
+  flex: 0 0 auto
+
+.scroll
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  flex-full()
+
+// This is a neat trick that will center its children.
+.center
+  flex-row()
+  > *
+    flex-full()
+    flex-center()
+
+// React required pointers for anything on mobile to be clickable.
+.pointer
+  cursor: pointer
+
+// Top-level views that live in the .content div will use this.
+.view
+  full-size()
+  flex-column()
+
+.inline
+  display: inline-block

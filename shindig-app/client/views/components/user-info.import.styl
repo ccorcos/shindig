@@ -1,0 +1,38 @@
+.user-info
+  flex: 0 0 auto
+  padding-top: 40px
+  .prof-pic
+    flex: 0 0 100px
+    width: 100px
+    margin: 0 auto
+    background-size: cover
+  .name
+    padding: 5px 5px
+    font-size: 18px
+    line-height: 30px
+    flex: 0 0 30px
+    margin: 0 auto
+    text-align: center
+    max-width: 100%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  .follow-info
+    padding: 10px
+    margin: 0 auto
+    flex: 0 0 auto
+    .inner
+      margin: 0 auto
+      > div
+        margin-right: 10px
+      .follow-count, .follower-count
+        &.loading
+          width: 10px
+      .follow-button
+        &.loading
+          width: 80px
+  &.loading
+    height: 160px
+    max-width: 400px
+    width: calc(100% - 20px)
+    margin: 10px auto

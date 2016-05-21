@@ -1,0 +1,177 @@
+// UI Parameters
+break = 750px // the mobile/desktop break point
+// font = PTSerif-Regular
+font = -apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif
+sm-nav-height = 65px
+sm-tabbar-height = 50px
+status-bar-height = 20px
+sm-lr-width = sm-nav-height - status-bar-height // left / right buttons
+lg-content-width = 500px
+lg-tabbar-width = 300px  // within the navbar
+lg-nav-height = 80px
+toolbar-row-height = 45px
+lg-lr-width = toolbar-row-height // left / right buttons
+input-padding = 10px
+input-margin = 5px
+toolbar-top-padding = 10px
+toolbar-bottom-padding = 10px
+
+
+color-black = rgb(14,14,14)
+color-dark = rgb(26,26,26)
+color-yellow = rgba(248,231,28,1)
+color-green = rgba(94, 222, 78, 1)
+color-white = rgba(255,255,255,1)
+color-gray = rgba(155,155,155,1)
+color-blue = rgba(74,144,226,1)
+color-red = #E51E1E
+
+color-nav = color-dark
+color-toolbar = color-dark
+color-tabbar = color-dark
+color-bg = color-black
+color-button = color-white
+color-title = color-white
+color-heading = color-white
+color-text = color-white
+color-location = color-white
+color-time = color-white
+color-star = color-yellow
+color-error = color-red
+color-backdrop = color-bg
+color-drawer = color-dark
+
+color-unverified = color-red
+color-sub-loading = color-red
+color-fb-loading = color-blue
+color-shortcut = color-green
+
+checkbox-height = 20px
+checked-color = color-button
+unchecked-color = color-button
+
+@import 'nib' // vendor prefixes
+@import 'styles/normalize.import' // i hate browser quirks
+@import 'styles/rupture.import' // +above +before media queries
+
+*, *:before, *:after
+  box-sizing: border-box
+
+normalize-css()
+fluid-media()
+
+
+// My imports
+@import 'styles/utils.import'
+@import 'styles/animate.import'
+@import 'styles/input.import'
+@import 'styles/typography.import'
+// @import './playground.import'
+@import 'views/svg/svg.import'
+@import 'views/components/layout.import'
+@import 'views/components/checkbox.import'
+@import 'views/components/toolbar.import'
+@import 'views/components/filters.import'
+@import 'views/components/tabbar.import'
+@import 'views/components/modal.import'
+@import 'views/components/spinner.import'
+@import 'views/components/user-item.import'
+@import 'views/components/event-item.import'
+@import 'views/components/user-info.import'
+@import 'views/components/list.import'
+@import 'views/components/share-link.import'
+@import 'views/svg/logo.import'
+@import 'views/login.import'
+// @import 'views/user.import'
+@import 'views/users.import'
+
+// Colors and fonts
+body
+  background-color: color-bg
+  fill: color-bg
+  color: color-text
+  font-family: font
+  font-size: 14px
+
+.pad
+  padding: 20px 10px
+
+.view
+  background-color: color-bg
+  overflow-x: hidden
+
+.error
+  color: color-error
+
+.layout
+  .navbar
+    background-color: color-nav
+    fill: color-nav
+    .title
+      color: color-title
+      font-size: 24px
+    .left, .right
+      color: color-button
+
+  .tab-button
+    color: color-button
+
+// Animations
+animate-slide-up('small-tabbar-transition')
+animate-fade('large-tabbar-transition')
+animate-fade('login-error')
+animate-fade('login-loading')
+animate-fade('content-transition')
+animate-fade('tabvc')
++above(break)
+  animate-fade('navvc-push')
+  animate-fade('navvc-pop')
++below(break)
+  animate-push('navvc-push')
+  animate-pop('navvc-pop')
++above(break)
+  animate-delay-fade('nav-left')
+  animate-delay-fade('nav-right')
++below(break)
+  animate-scale('nav-left')
+  animate-scale('nav-right')
+animate-fade('nav-title')
+
+animate-scale('modal-backdrop')
++above(break)
+  animate-fade('modal')
++below(break)
+  animate-slide-up('modal')
+
+
+animate-fade('fade')
+
+
+a
+  text-decoration: none
+  color: inherit
+
+// .icon
+//   cursor: pointer
+//   flex-center()
+
+.wrap-content
+  flex-column()
+  margin: 0 auto
+  width: 100%
+  max-width: lg-content-width
+
+svg.loading.loading
+  border: 0
+.sub.loading
+  border: 1px solid color-sub-loading
+  stroke: color-sub-loading
+.fb.loading
+  border: 1px solid color-fb-loading
+  stroke: color-fb-loading
+.unverified
+  color: color-unverified
+  stroke: color-unverified
+.shortcut
+  color: color-shortcut
+  stroke: color-shortcut

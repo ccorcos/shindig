@@ -1,0 +1,23 @@
+.filter-row
+  flex: 0 0 toolbar-row-height
+  .icon-input
+    position: relative
+    input
+      padding-left: (toolbar-row-height - 2 * input-margin)
+    .icon
+      flex-center()
+      padding: input-margin
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: toolbar-row-height
+    .input-predict-wrap
+      position: absolute
+      right: 0
+      bottom: 0
+      margin: 10px 20px
+      font-size: 0.7em
+    .spyglass
+      padding: 2px
+      transform: rotateY(180deg)

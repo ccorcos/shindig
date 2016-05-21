@@ -1,0 +1,11 @@
+{
+  "facebook_secret": "[SECRET]",
+  "neo4j_url": "http://neo4j:[PASSWORD]@[IP]:7474",
+  "public": {
+    "facebook": {
+      "app_id": "[ID]",
+      "permissions": ["user_friends", "user_likes", "user_events"]
+    },
+    "charts": ["getSessionsPerHour", "getStarsPerHour", "getFollowsPerHour"]
+  }
+}

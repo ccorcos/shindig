@@ -1,0 +1,13 @@
+load-more-height = 90px
+load-more-icon-height = 40px
+
+.list
+  .load-more
+    text-align: center
+    position: relative
+    flex: 0 0 load-more-height
+    line-height: load-more-height
+    svg
+      width: load-more-icon-height
+      height: load-more-icon-height
+      margin-top: s("calc((%s - %s) / 2)", load-more-height, load-more-icon-height)

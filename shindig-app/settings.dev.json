@@ -1,0 +1,59 @@
+{
+  "facebook_secret": "[SECRET]",
+  "crawl": {
+    "threshold_hours": 1,
+    "interval_hours": -1
+  },
+  "kadira": {
+    "appId": "[ID]",
+    "appSecret": "[SECRET]"
+  },
+  "neo4j_url": "http://localhost:7474",
+  "public": {
+    "google_browser_api_key": "[KEY]",
+    "ui_debounce_ms": 500,
+    "input_throttle_ms": 700,
+    "simulate_client_delay_ms": 0,
+    "simulate_server_delay_ms": 0,
+    "http_cache_minutes": 1,
+    "sub_cache_minutes": 1,
+    "user_list_paging_limit": 24,
+    "event_list_paging_limit": 8,
+    "facebook": {
+      "app_id": "[ID]",
+      "permissions": ["user_friends", "user_likes", "user_events"]
+    },
+    "calendar_format": {
+      "lastDay": "[Yesterday at] h:mma",
+      "sameDay": "[Today at] h:mma",
+      "nextDay": "[Tomorrow at] h:mma",
+      "lastWeek": "[Last] dddd [at] h:mma",
+      "nextWeek": "dddd [at] h:mma",
+      "sameElse": "dddd, MMMM D YYYY, h:mma"
+    },
+    "log": {
+      "pub": false,
+      "sub": false,
+      "cache": false,
+      "http_store": false,
+      "sub_store": false,
+      "methods": true,
+      "crawl": true
+    }
+  },
+  "sikka": {
+    "onlyForHumans": false,
+    "rateLimits": {
+      "perIp": 100,
+      "perHuman": 100
+    },
+    "times": {
+      "blockIpFor": 120000,
+      "humanLivesUpto": 3600000
+    },
+    "captcha": {
+      "siteKey": "[KEY]",
+      "secret": "[SECRET]"
+    }
+  }
+}

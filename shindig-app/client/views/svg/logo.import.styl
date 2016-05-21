@@ -1,0 +1,22 @@
+
+.logo.logo.logo {
+  fill: transparent;
+  stroke: color-text;
+  stroke-width: 1px;
+  stroke-dasharray: 534px;
+  stroke-dashoffset: 534px;
+  animation: stroke 3s linear both, fill .5s ease-in 2.5s both;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  100% {
+    fill: color-text;
+    stroke-width: 0;
+  }
+}

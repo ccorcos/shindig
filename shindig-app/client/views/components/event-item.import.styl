@@ -1,0 +1,62 @@
+.event
+  .cover.cover
+    height: auto
+
+.description
+  white-space: pre-wrap
+  word-break: break-word
+
+.event-item
+  margin-bottom: 20px
+
+.event-item, .event
+  flex: 0 0 auto
+  .cover
+    max-height: 80vh
+    margin: 0 auto
+    padding: 5px
+    // flex: 0 0 auto
+  .title
+    font-size: 1.3em
+    // height: auto !important
+    span, a
+      width: 100%
+  .row
+    padding: 5px
+    height: auto
+    // flex: 0 0 auto
+    .icon
+      width: 30px
+      height: 30px
+      flex: 0 0 30px
+    > span
+      padding: 5px
+      margin-left: 5px
+    span
+      flex: 1 1 0
+      line-height: (30px - (5px*2))
+      span
+        flex: 1 1 0
+        line-height: (30px - (5px*2))
+  .user-item
+    flex: 0 0 (50px + 5px*2)
+    height: (50px + 5px*2)
+    margin-bottom: 0
+
+
+  &.loading
+    height: 300px
+    width: 100%
+    outline: none
+
+.star-info
+  .star-count
+    width: 30px
+    text-align: center
+    &.loading
+      width: 30px
+
+color-duration = 0.1s
+color-ease = ease-out
+.star
+  transition: color color-duration color-ease, fill color-duration color-ease, border-color color-duration color-ease, stroke color-duration color-ease

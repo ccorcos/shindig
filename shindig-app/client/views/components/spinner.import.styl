@@ -1,0 +1,33 @@
+// http://codepen.io/mikeambrosi/pen/JdEMVX?editors=010
+
+.spinner, .spinner::before, .spinner::after
+  position: absolute
+  top: 50%
+  left: 50%
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-left-color: rgba(255, 255, 255, 0.4)
+  border-radius: 999px
+
+.spinner
+  margin: -25px 0 0 -25px
+  height: 50px
+  width: 50px
+  animation: spinner-rotate 1000ms linear infinite
+
+.spinner::before
+  content: ""
+  margin: -23px 0 0 -23px
+  height: 44px
+  width: 44px
+  animation: spinner-rotate 1000ms linear infinite
+
+.spinner::after
+  content: ""
+  margin: -29px 0 0 -29px
+  height: 56px
+  width: 56px
+  animation: spinner-rotate 2000ms linear infinite
+
+@keyframes spinner-rotate
+  100%
+    transform: rotate(360deg)

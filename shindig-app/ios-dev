@@ -1,0 +1,10 @@
+#!/bin/sh
+
+dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+cd $dir
+
+# startup neo4j and mongo
+ttab -t 'shindig-ios-dev' eval "\
+m4j stop; \
+m4j start; \
+meteor run ios --settings settings.dev.json --port 3000"

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+./shindig-app/stage
+./shindig-stats/stage

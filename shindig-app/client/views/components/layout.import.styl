@@ -1,0 +1,80 @@
+
+.layout
+  overflow: hidden
+  .navbar
+    &.small
+      flex: 0 0 sm-nav-height
+      .navbar-inner
+        padding-top: status-bar-height
+        .left, .right
+          flex: 0 0 sm-lr-width
+          .x
+            padding: 5px
+          .spyglass
+            padding: 10px
+          .back
+            padding: 10px
+        .title
+          svg
+            // fill: color-text
+            height: (sm-nav-height / 2)
+
+    &.large
+      flex: 0 0 lg-nav-height
+      border-bottom: 1px solid color-black
+      .navbar-inner
+        padding-top: status-bar-height
+        height: 100%
+        width: break
+        margin: 0 auto
+        .title
+          align-items: center
+          justify-content: left
+          padding-left: 20px
+          height: sm-tabbar-height
+          svg
+            // fill: color-text
+            height: (lg-nav-height / 2)
+            width: auto
+        .tabbar-wrapper
+          flex: 0 0 lg-tabbar-width
+
+
+  .layout-inner
+    +above(break)
+      .left-gutter, .right-gutter
+        pointer-events: none
+        position: absolute
+        top: 0
+        bottom: 0
+        width: "calc( (100% - %s) / 2)" % lg-content-width
+      .left-gutter
+        left: 0
+        .left
+          absolute: top right
+      .right-gutter
+        right: 0
+        .right
+          absolute: top left
+      .left, .right
+        pointer-events: all
+        height: lg-lr-width
+        width: lg-lr-width
+        margin-top: toolbar-top-padding
+        .x
+          padding: 5px
+        .spyglass
+          padding: 10px
+        .back
+          padding: 10px
+
+  .small.tabbar-wrapper
+    flex: 0 0 sm-tabbar-height
+
+  +below(break)
+    .large.large.large
+      flex-hide()
+
+  +above(break)
+    .small.small.small
+      flex-hide()
